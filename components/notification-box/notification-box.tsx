@@ -1,7 +1,7 @@
 import React from 'react';
 import cs from 'classnames'
 import styles from './notification-box.module.scss'
-import {Button} from '@eden/harmony-with-github-actions.new-comps.button'
+import { Button } from '@teambit/harmony-with-github-actions.react-ui.button'
 
 export type NotificationBoxProps = {
     /** The notification box content. */
@@ -17,7 +17,7 @@ export const NotificationBox = ({className, children, floatEffect = true} : Noti
      <div className={cs(styles.container, floatEffect ? styles.float : null, className)}>
         {children}
         <div>
-            <Button variant='secondary'>Okay</Button>
+            <Button variant='secondary'>close</Button>
         </div>
      </div>   
     )
