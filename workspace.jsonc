@@ -1,0 +1,62 @@
+/**
+ * this is the main configuration file of your bit workspace.
+ * for full documentation, please see: https://docs.bit.dev/configuration
+ **/{
+  "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
+  /**
+   * main configuration of the Bit workspace.
+   **/
+  "teambit.workspace/workspace": {
+    /**
+     * the name of the component workspace. used for development purposes.
+     **/
+    "name": "harmony-with-github-actions",
+    /**
+     * set the icon to be shown on the Bit server.
+     **/
+    "icon": "https://static.bit.dev/bit-logo.svg",
+    /**
+     * default scope for all components in workspace.
+     **/
+    "defaultScope": "eden.harmony-with-github-actions"
+  },
+  /**
+   * main configuration for component dependency resolution.
+   **/
+  "teambit.dependencies/dependency-resolver": {
+    /**
+     * choose the package manager for Bit to use. you can choose between 'yarn', 'pnpm'
+     */
+    "packageManager": "teambit.dependencies/pnpm",
+    "policy": {
+      "dependencies": {
+        "@teambit/documenter.theme.theme-context": "0.2.2",
+        "@teambit/documenter.ui.linked-heading": "0.2.2",
+        "@teambit/documenter.ui.list": "0.2.2",
+        "@teambit/documenter.ui.section": "0.2.2",
+        "@teambit/documenter.ui.separator": "0.2.2",
+        "@testing-library/react": "11.2.2",
+        "@types/react": "16.9.56",
+        "classnames": "2.2.6"
+      },
+      "peerDependencies": {
+        "@babel/runtime": "7.12.5",
+        "react": "17.0.1",
+        "react-dom": "17.0.1"
+      }
+    }
+  },
+  /**
+   * workspace variants allow to set different subsets of configuration for components in your workspace.
+   * this is extremely useful for upgrading, aligning and building components with a
+   * new set of dependencies.
+   **/
+  "teambit.workspace/variants": {
+    /**
+     * "*" is a special rule which applied on all components in the workspace.
+     **/
+    "*": {
+      "teambit.react/react": {}
+    }
+  }
+}

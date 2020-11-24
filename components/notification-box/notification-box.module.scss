@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.container {
+  border: solid 7px #41403e;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  line-height: 1.5;
+  padding: 25px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+  max-width: 350px;
+  min-width: 250px;
+}
+
+.float {
+    box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    transition: box-shadow 0.5s;
+    &:hover {
+      box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.3);
+    }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+}
