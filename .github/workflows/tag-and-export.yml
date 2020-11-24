@@ -1,0 +1,45 @@
+# This workflow hard-tags and exports soft-tagged components
+name: Tag and Export Components
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tag-and-export:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '--skip-ci')"
+    env:
+      BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install latest version of bit 
+      run: npm i -g @teambit/bit
+    - name: Set up bit config
+      run: |
+          bbit config set analytics_reporting false
+          bbit config set anonymous_reporting false
+          bbit config set user.token $BIT_TOKEN
+    - name: Install packages using bit
+      run: bbit install
+    - name: Hard-tag pending components
+      run: bbit tag --persist --all
+    - name: Export components
+      run: bbit export
+    - name: Run diagnosis if any previous step fails
+      if: ${{ failure() }}
+      run: bbit doctor
+    - name: Commit changes made to .bitmap
+      run: |
+        git config --global user.name '${{ github.actor }}'
+        git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+        git add .bitmap
+        git commit -m "update .bitmap with new component versions (automated). --skip-ci"
+        git push
