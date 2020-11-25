@@ -30,7 +30,7 @@ jobs:
     - name: Install packages using bit
       run: bbit install
     - name: Hard-tag pending components
-      run: bbit tag --persist --all
+      run: bbit tag --persist
     - name: Export components
       run: bbit export
     - name: Run diagnosis if any previous step fails
