@@ -92,7 +92,6 @@ jobs:
 1. __Install packages__ using Bit (this will also create packages for tracked components that are not yet tagged).
 2. __Hard-tag__ all components pending to be versioned. These are components that were 'soft-tagged' by a workspace in a local repository (the source of the 'push' or pull-request that triggered the CI).
 3. __Export__ all tagged components.
-4. Use `bbit doctor` to produce a diagnosis, in case any of these steps fail
 
 ```yaml
 - name: Install packages using bit
@@ -101,9 +100,6 @@ jobs:
   run: bbit tag --persist
 - name: Export components
   run: bbit export
-- name: Run diagnosis if any previous step fails
-  if: ${{ failure() }}
-  run: bbit doctor
 ```
 > __Where is the 'test' and 'build'?__ 
 > 
