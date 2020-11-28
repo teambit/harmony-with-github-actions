@@ -33,9 +33,6 @@ jobs:
       run: bbit tag --persist
     - name: Export components
       run: bbit export
-    - name: Run diagnosis if any previous step fails
-      if: ${{ failure() }}
-      run: bbit doctor
     - name: Commit changes made to .bitmap
       run: |
         git config --global user.name '${{ github.actor }}'
