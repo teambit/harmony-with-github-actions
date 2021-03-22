@@ -6,6 +6,6 @@ describe('Button', () => {
   it('should render a test button', () => {
     const { getByText } = render(<Button>test button</Button>);
     const testButton = getByText(/test button/i);
-    expect(testButton).toBeInTheDocument();
+    expect(testButton).toBeTruthy();
   });
 });

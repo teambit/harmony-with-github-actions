@@ -4,32 +4,33 @@
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   padding: 10px;
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
+  text-transform: uppercase;
   outline: none;
   transition: border-radius 0.5s;
-  text-transform: uppercase;
   &:active {
     border-color: #313131;
     background-color: #fff;
     color: #000;
   }
-  &:hover{
+  &:hover {
     border-radius: 15px 225px 15px 255px/255px 15px 225px 15px;
   }
   &:disabled {
     border-color: #a5a5a5;
     background-color: #a5a5a5;
+    cursor: not-allowed;
     &:hover {
       border-color: #a5a5a5;
       background-color: #a5a5a5;
-      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;;
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     }
   }
 }
 
-.primary {
+[data-variant='primary'] {
   border: solid 7px #ab3636;
   background-color: #ab3636;
   &:hover {
@@ -38,7 +39,7 @@
   }
 }
 
-.secondary {
+[data-variant='secondary'] {
   border: solid 7px #2b3186;
   background-color: #2b3186;
   &:hover {

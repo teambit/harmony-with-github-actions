@@ -1,25 +1,32 @@
 import React, { ButtonHTMLAttributes } from 'react';
 import styles from './button.module.scss';
-import cs from 'classnames';
 
-export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * Determines whether button has a primary or secondary type of styling.
-   */
+export type ButtonProps = {
   variant: 'primary' | 'secondary';
-}
+  isLoading: boolean;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-/** 
- *  A simple button component.
-*/
-export function Button({ children, variant, ...rest }: IButton) {
+export function Button({
+  children,
+  variant,
+  isLoading,
+  disabled,
+  ...rest
+}: ButtonProps) {
   return (
-    <button className={cs(styles.base, styles[variant])} {...rest}>
-      {children}
+    <button
+      data-variant={variant}
+      className={styles.base}
+      disabled={isLoading || disabled}
+      {...rest}
+    >
+      {isLoading ? 'Loading...' : children}
     </button>
   );
 }
 
 Button.defaultProps = {
   variant: 'primary',
+  disabled: false,
+  isLoading: false,
 };

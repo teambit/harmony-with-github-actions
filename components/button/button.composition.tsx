@@ -1,9 +1,9 @@
-import React from "react";
-import { Button } from "./button";
+import React from 'react';
+import { Button } from './button';
 
 export const PrimaryButton = () => {
   return (
-    <Button variant="primary" onClick={() => alert("Clicked!")}>
+    <Button variant="primary" onClick={() => alert('Clicked!')}>
       Primary Button
     </Button>
   );
@@ -19,4 +19,8 @@ export const DisabledButton = () => {
       Disabled Button
     </Button>
   );
+};
+
+export const ButtonIsLoading = () => {
+  return <Button isLoading={true}>Label</Button>;
 };

@@ -1,6 +1,6 @@
 /**
  * this is the main configuration file of your bit workspace.
- * for full documentation, please see: https://docs.bit.dev/configuration
+ * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
  **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
@@ -10,11 +10,15 @@
     /**
      * the name of the component workspace. used for development purposes.
      **/
-    "name": "harmony-with-github-actions",
+    "name": "Bit Harmony with Github Actions",
     /**
      * set the icon to be shown on the Bit server.
      **/
     "icon": "https://static.bit.dev/bit-logo.svg",
+    /**
+     * default directory for all components in workspace.
+     **/
+    "defaultDirectory": "{scope}/{name}",
     /**
      * default scope for all components in workspace.
      **/
@@ -30,21 +34,18 @@
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
       "dependencies": {
-        "@teambit/documenter.theme.theme-context": "0.2.2",
-        "@teambit/documenter.ui.linked-heading": "0.2.2",
-        "@teambit/documenter.ui.list": "0.2.2",
-        "@teambit/documenter.ui.section": "0.2.2",
-        "@teambit/documenter.ui.separator": "0.2.2",
-        "@testing-library/react": "11.2.2",
-        "@types/react": "16.9.56",
-        "classnames": "2.2.6"
+        "@testing-library/react": "11.2.5"
       },
       "peerDependencies": {
-        "@babel/runtime": "7.12.5",
-        "react": "17.0.1",
-        "react-dom": "17.0.1"
+        "react": "16.13.1",
+        "react-dom": "16.13.1"
       }
-    }
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
+    "strictPeerDependencies": true
   },
   /**
    * workspace variants allow to set different subsets of configuration for components in your workspace.
@@ -56,7 +57,10 @@
      * "*" is a special rule which applied on all components in the workspace.
      **/
     "*": {
-      "teambit.react/react": {}
+      /**
+       * uncomment to apply the react environment on all components.
+       **/
+      // "teambit.react/react": { }
     }
   }
 }
