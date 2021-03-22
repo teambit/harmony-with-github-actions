@@ -24,6 +24,8 @@ jobs:
       run: npm i -g @teambit/bvm
     - name: Install latest Bit version 
       run: bvm install
+    - name: link Bit version 
+      run: bvm link --verbose
     - name: Set ENV variables
       run: | 
         echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
