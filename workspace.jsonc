@@ -25,7 +25,7 @@
     "defaultScope": "teambit.github-actions-demo"
   },
   /**
-   * main configuration for component dependency resolution.
+   * main configuration for component dependency resolution.`
    **/
   "teambit.dependencies/dependency-resolver": {
     /**

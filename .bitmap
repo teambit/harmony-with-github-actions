@@ -5,13 +5,25 @@
         "scope": "teambit.github-actions-demo",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "components/app-bar"
+        "rootDir": "components/app-bar",
+        "nextVersion": {
+            "version": "patch",
+            "message": "update button. update app-bar",
+            "username": "Eden",
+            "email": "eden@bit.dev"
+        }
     },
     "button": {
         "scope": "teambit.github-actions-demo",
         "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "components/button"
+        "rootDir": "components/button",
+        "nextVersion": {
+            "version": "patch",
+            "message": "update button. update app-bar",
+            "username": "Eden",
+            "email": "eden@bit.dev"
+        }
     },
     "version": "1.0.42"
 }
