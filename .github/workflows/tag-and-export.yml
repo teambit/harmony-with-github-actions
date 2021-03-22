@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
+    - name: show $home 
+      run: echo $HOME
     - name: Install Bit Version Manager 
       run: npm i -g @teambit/bvm
     - name: Install latest Bit version 
