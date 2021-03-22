@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
  * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/{
+ **/ {
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -10,7 +10,7 @@
     /**
      * the name of the component workspace. used for development purposes.
      **/
-    "name": "Bit Harmony with Github Actions",
+    "name": "github-actions-demo",
     /**
      * set the icon to be shown on the Bit server.
      **/
@@ -22,7 +22,7 @@
     /**
      * default scope for all components in workspace.
      **/
-    "defaultScope": "teambit.harmony-with-github-actions"
+    "defaultScope": "teambit.github-actions-demo"
   },
   /**
    * main configuration for component dependency resolution.
@@ -42,9 +42,7 @@
       }
     },
     "packageManagerArgs": [],
-    "devFilePatterns": [
-      "**/*.spec.ts"
-    ],
+    "devFilePatterns": ["**/*.spec.ts"],
     "strictPeerDependencies": true
   },
   /**
@@ -60,7 +58,7 @@
       /**
        * uncomment to apply the react environment on all components.
        **/
-      // "teambit.react/react": { }
+      "teambit.react/react": {}
     }
   }
 }
