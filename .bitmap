@@ -2,28 +2,16 @@
 
 {
     "app-bar": {
-        "scope": "",
-        "version": "",
+        "scope": "teambit.github-actions-demo",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "components/app-bar",
-        "nextVersion": {
-            "version": "patch",
-            "message": "initial version",
-            "username": "Eden",
-            "email": "eden@bit.dev"
-        }
+        "rootDir": "components/app-bar"
     },
     "button": {
-        "scope": "",
-        "version": "",
+        "scope": "teambit.github-actions-demo",
+        "version": "0.0.1",
         "mainFile": "index.ts",
-        "rootDir": "components/button",
-        "nextVersion": {
-            "version": "patch",
-            "message": "initial version",
-            "username": "Eden",
-            "email": "eden@bit.dev"
-        }
+        "rootDir": "components/button"
     },
     "version": "1.0.42"
 }
