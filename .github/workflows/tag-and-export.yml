@@ -20,8 +20,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - name: Install latest version of bit 
-      run: npm i -g @teambit/bit
+    - name: Install Bit Version Manager 
+      run: npm i -g @teambit/bvm
+    - name: Install latest Bit version 
+      run: bvm install
     - name: Set up bit config
       run: |
           bbit config set analytics_reporting false
