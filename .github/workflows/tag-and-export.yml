@@ -24,8 +24,10 @@ jobs:
       run: npm i -g @teambit/bvm
     - name: Install latest Bit version 
       run: bvm install
-    - name: set anv variables
-      run: echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
+    - name: Set ENV variables
+      run: | 
+        echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
+        echo $PATH
     - name: Set up bit config
       run: |
           bit config set analytics_reporting false
