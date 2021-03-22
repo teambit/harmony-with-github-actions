@@ -24,21 +24,25 @@ jobs:
       run: npm i -g @teambit/bvm
     - name: Install latest Bit version 
       run: bvm install
-    - name: Set up bit config
-      run: |
-          bbit config set analytics_reporting false
-          bbit config set anonymous_reporting false
-          bbit config set user.token $BIT_TOKEN
-    - name: Install packages using bit
-      run: bbit install
-    - name: Hard-tag pending components
-      run: bbit tag --persist
-    - name: Export components
-      run: bbit export
-    - name: Commit changes made to .bitmap
-      run: |
-        git config --global user.name '${{ github.actor }}'
-        git config --global user.email '${{ github.actor }}@users.noreply.github.com'
-        git add .bitmap
-        git commit -m "update .bitmap with new component versions (automated). --skip-ci"
-        git push
+    - name: echo PATH
+      run: echo $PATH
+    - name: echo HOME
+      run: echo $HOME
+#     - name: Set up bit config
+#       run: |
+#           bit config set analytics_reporting false
+#           bit config set anonymous_reporting false
+#           bit config set user.token $BIT_TOKEN
+#     - name: Install packages using bit
+#       run: bit install
+#     - name: Hard-tag pending components
+#       run: bit tag --persist
+#     - name: Export components
+#       run: bit export
+#     - name: Commit changes made to .bitmap
+#       run: |
+#         git config --global user.name '${{ github.actor }}'
+#         git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+#         git add .bitmap
+#         git commit -m "update .bitmap with new component versions (automated). --skip-ci"
+#         git push
