@@ -25,8 +25,7 @@ jobs:
     - name: Install latest Bit version 
       run: bvm install
     - name: set anv variables
-      env:
-        PATH: "$HOME/bin:$PATH"
+      run: echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
     - name: Set up bit config
       run: |
           bit config set analytics_reporting false
